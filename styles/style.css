@@ -1,0 +1,145 @@
+/*Se importa las fuentes que quieres ocupar en la pagina de "google fonts"*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{ /*este sirve para crear variables, al querer cambiar algo que se repite mucho se cambia directamente aqui*/
+    --color-primario:#000000;
+    --color-secundario:#f6f6f6;
+    --color-terciario:#22d4fd;
+    --color-hover: #272727;
+
+    --fuente-montserrat: "Montserrat", sans-serif;
+    --fuente-krona: "Krona One", sans-serif;
+
+}
+
+/*siempre se coloca esto para manejar nuestros margenes y no los predeterminados*/
+*{
+    padding: 0;
+    margin: 0; /*agrega el margen para acomodar los elemntos en la pantalla, como los margenes en un archivo word*/
+}
+
+body{
+    background-color: var(--color-primario); /*variable creada para cambiar el color del fondo*/
+    color: var(--color-secundario);
+    box-sizing: border-box;
+}
+
+
+
+.header{
+    padding: 2% 0% 0% 15%; /*arriba, derecha, abajo, izquierda*/
+}
+
+.header-menu{
+    display: flex;
+    gap: 80px; 
+}
+
+.header-menu-link{
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem; /*1rem es iguak a 16px, es mejor poner rem que px porque el tamaño de la letra se va acomodando segun el zoom y el dispositivo en el que estas viendo la pagina*/
+                      /*solo se hace el cambio de px a rem en los font-size*/
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+}
+
+.presentacion{
+    display: flex;
+    align-items: center;
+    padding: 6% 15%; 
+    justify-content: space-between; 
+    gap: 82px;
+}
+
+.presentacion-contenido{
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /*espaciado entre un texto y otro*/
+}
+
+.presentacion-contenido-titulo{
+    font-size: 2.25rem;
+    font-family: var(--fuente-krona);
+}
+
+.titulo-destaque{
+    color: var(--color-terciario)
+}
+
+.presentacion-contenido-texto{
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+}
+
+.presentacion-enlaces{
+    display: flex; /*coloca los elemnos uno alado del otro*/
+    justify-content: space-between;
+    flex-direction: column; /*se acomoda el los elementos en colunas*/
+    align-items: center; /*alinear nuestros botones al centro en nuestro espacio*/
+    gap: 32px;
+}
+
+.presentacion-enlaces-subtitulo{
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion-enlaces-link{
+    width: 61.5%;/*tamaño del boton*/ /*se cambia de px a % para que se adapte automaticamente a cualquier dispositivo dependiendo el zoom*/
+                                        /* el % se lo vas tanteando ya que va dependiendo de cuanto quieras que cubra de la pantalla */
+                                        
+    display: flex; /*alinea todos los elementos */
+    justify-content: center; /*mueve los elemntos al crentro*/
+    gap: 10px;
+    text-align: center;/* alinea el texto al centro*/
+    padding: 21.5px 0px; /*espaciado dentro del boton arriba abajo -- derecha izquierda*/
+    border-radius: 8px; /*redondea los bordes*/
+    font-family: var(--fuente-montserrat); /*nombre de la fuente*/
+    font-size: 1.5rem; /*tamaño de la fuente*/
+    font-weight: 600;/*tipo de la fuente segun google fonts*/
+    text-decoration: none; /*quita el sobrayado de los links*/
+    color: var(--color-secundario);
+    border: 2px solid var(--color-terciario); /*colocar un borde, tamaño de la linea--tipo de borde-- color del borde*/
+}
+
+.presentacion-enlaces-link:hover{ /*al agregar :hover hacemos que al pasar nuestro cursor por el boton sucedan cosas como cambiar de color un boton*/
+    background-color: var(--color-hover); /*el boton cambiara de color al poner el cursos ensima*/
+}
+
+.presentacion-imagen{
+    width: 50%;
+}
+
+.footer{
+    background-color: var(--color-terciario);
+    padding: 1.5rem; /*es el responsable de definir la distancia entre un contenido y sus bordes, como el contenido dentro de un boton*/
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@media (max-width: 1200px){ /*media es una propiedad como si fuera una condicionante if*/
+                            /*si la pantalla es menor al max-width entonces ....*/
+    .header{/*estamos cambiando las propiedades de esta clase*/
+        padding: 10%;
+    }
+
+    .header-menu{
+        justify-content: center;
+    }
+
+    .presentacion{ 
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .presentacion-contenido{
+        width: auto;
+    }
+
+}
